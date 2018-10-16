@@ -1,0 +1,25 @@
+language: r
+cache: packages
+r_packages:
+- covr
+- drat
+- pkgdown
+before_install:
+- bash make.sh
+after_success:
+- Rscript -e 'library(covr); codecov()'
+- test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && bash
+  deploy.sh
+- test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && Rscript
+  -e 'Sys.sleep(10);install.packages("sykdomspuls",repos="https://folkehelseinstituttet.github.io/drat/");pkgdown::build_site()'
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: "$GH_TOKEN"
+  keep-history: true
+  local-dir: docs
+  on:
+    branch: master
+env:
+  global:
+    secure: DpTd+K7vf28rq9aLtzKTk4u9rX+HkNsDTwai0aAsl2I1C82U670dirB9fWVkJ1by+XdfGFyt612vXCd0A97Vgq1iHpxijWF4FXh2EQy1cQSpxAzW5WX+p6Ll2e2aqcD1u4Y+gzYe9DRz0uf+Zguq4pWAoLhz1+xhtSTLYFGzEF4nP0CwrfLFqz264u+fJsZQmjei2UG9yVMZEznj2gMAJIqy7lmmxqZi38UDwZWL9o3L8KjleeadYLrwG26iJMGImJxv6kmIBl0iY9fT3eDAz6A+7oxKpJTA4wYBGsMACgLyRSgdA6YaeYsAV6BGeZQ9Ph0DRFXw7VcuE7xTjDMKTvWdICAG4b07wFfO0BVwOWFyUcONF7HfSwv01el2FCW1FY/F0ghu3g84kOnbBfChIfvJiRgv6C+5/8kdBGYNN3I0GG1/sR+V5Pwa92ZIiPOGgWywI+XyrZ2ohGmGAcXsUhiwSldHqcNlR1fU7AS2wotwPCapSzHfMAr75+Co/G46JIqd7eDCFc6QNlV8tCp6jJqJd45Z2lfRXBgLke7k04HoF3ZGS6xGijvMEzKdP2VG3ubQ9338zLAt7SlQUv1zOrOcMDiGm+OG8BL4at5FNcB2D4Kk+Se9/2vEW/6PlT82ZtZP9SfXreb86OsHwMewe3wzeO0EtVlh8WruUFHDFGg=

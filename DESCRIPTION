@@ -1,0 +1,20 @@
+Package: sykdomspulspdf
+Title: Monthly production of pdfs for the Norwegian Syndromic Surveillance System - NorSySS
+Version: 0.0.2
+Authors@R: person("B", "V", email = "beva@fhi.com", role = c("aut", "cre"))
+Description: What the package does (one paragraph).
+Depends: R (>= 3.4.2), odfWeave
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+Additional_repositories: https://folkehelseinstittutet.github.io/drat/, https://raubreywhite.github.io/drat/
+Imports: 
+  devtools,
+  testthat,
+  odfWeave,
+  data.table,
+  lubridate,
+  grDevices,
+  ggplot2
+Suggests: testthat
+RoxygenNote: 6.0.1
