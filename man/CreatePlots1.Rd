@@ -6,6 +6,17 @@
 \usage{
 CreatePlots1(d, weeknow, Ukenummer, title, yrange)
 }
+\arguments{
+\item{d}{a}
+
+\item{weeknow}{a}
+
+\item{Ukenummer}{a}
+
+\item{title}{a}
+
+\item{yrange}{a}
+}
 \description{
 CreatePlots1
 }

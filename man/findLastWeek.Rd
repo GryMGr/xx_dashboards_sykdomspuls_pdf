@@ -7,7 +7,9 @@
 findLastWeek(date, data)
 }
 \arguments{
-\item{data}{}
+\item{date}{a}
+
+\item{data}{a}
 }
 \description{
 findLastWeek

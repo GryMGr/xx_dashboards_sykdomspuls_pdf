@@ -1,11 +1,9 @@
 ########################################################################################################
 ########################################################################################################
 #' getdataout
-#' @param d
-#' @param S
-#' @return
+#' @param d a
+#' @param S a
 #' @export getdataout
-#' @examples
 getdataout <- function(d,S){
   if (S=="mage"){
     out=d$gastro
@@ -18,13 +16,9 @@ getdataout <- function(d,S){
 
 #' Title
 #'
-#' @param In
-#' @param S
-#'
-#' @return
-#' @export
-#'
-#' @examples
+#' @param In a
+#' @param S a
+#' @export getIN
 getIN <- function(In,S){
   if (S=="mage"){
     out=In$mage
@@ -68,10 +62,7 @@ IdentifyAllDatasets <- function(raw=list.files(fhi::DashboardFolder("data_raw"),
 #' @param fylke a
 #' @param indoc a
 #' @import data.table
-#' @return
-#' @export
-#'
-#' @examples IdentifyInOutDoc
+#' @export IdentifyInOutDoc
 IdentifyInOutDoc <- function(raw=list.files(fhi::DashboardFolder("data_raw"),"^partially_formatted_"),
                              fylke=fread(system.file("extdata", "fylke.csv", package = "sykdomspulspdf")),
                              indoc=list.files(fhi::DashboardFolder("data_raw"),"in_")) {
@@ -106,14 +97,11 @@ IdentifyInOutDoc <- function(raw=list.files(fhi::DashboardFolder("data_raw"),"^p
 ########################################################################################################
 #' DeleteOldDatasets
 #'
-#' @param raw
-#' @param dat_in
-#' @param clean
+#' @param raw a
+#' @param dat_in a
+#' @param clean a
 #' @import data.table
-#' @return
-#' @export
-#'
-#' @examples DeleteOldDatasets
+#' @export DeleteOldDatasets
 DeleteOldDatasets <- function(raw=list.files(fhi::DashboardFolder("data_raw"),"^partially_formatted_"),
                               dat_in=list.files(fhi::DashboardFolder("data_raw"),"in_default"),
                               clean=list.files(fhi::DashboardFolder("data_clean"),"done_")){
@@ -131,13 +119,10 @@ DeleteOldDatasets <- function(raw=list.files(fhi::DashboardFolder("data_raw"),"^
 ########################################################################################################
 #' IdentifyDatasets
 #'
-#' @param raw
-#' @param clean
+#' @param raw a
+#' @param clean a
 #' @import data.table
-#' @return
 #' @export IdentifyDatasets
-#'
-#' @examples
 IdentifyDatasets <- function(raw=list.files(fhi::DashboardFolder("data_raw"),"^partially_formatted_"),
                              clean=list.files(fhi::DashboardFolder("data_clean"),"done_")){
   res <- IdentifyAllDatasets(raw=raw,clean=clean)
@@ -150,10 +135,7 @@ IdentifyDatasets <- function(raw=list.files(fhi::DashboardFolder("data_raw"),"^p
 ########################################################################################################
 #' LatestRawID
 #' @import data.table
-#' @return
-#' @export
-#'
-#' @examples
+#' @export LatestRawID
 LatestRawID <- function(){
   f <- IdentifyDatasets()
   return(max(f$id))
@@ -164,12 +146,9 @@ LatestRawID <- function(){
 
 #' DeleteLatestDoneFile
 #'
-#' @param file
+#' @param file a
 #' @import data.table
-#' @return
-#' @export
-#'
-#' @examples
+#' @export DeleteLatestDoneFile
 DeleteLatestDoneFile <- function(file=fhi::DashboardFolder("data_clean",paste0("done_",LatestRawID(),".txt"))){
   try(unlink(file),TRUE)
   #try(unlink(paste0("data_clean/done_",LatestRawID(),".txt")),TRUE)
@@ -180,12 +159,8 @@ DeleteLatestDoneFile <- function(file=fhi::DashboardFolder("data_clean",paste0("
 
 #' CreateLatestDoneFile
 #'
-#' @param file
-#'
-#' @return
-#' @export
-#'
-#' @examples
+#' @param file a
+#' @export CreateLatestDoneFile
 CreateLatestDoneFile <- function(file=fhi::DashboardFolder("data_clean",paste0("done_",LatestRawID(),".txt"))){
   try(file.create(file),TRUE)
 }
@@ -194,13 +169,9 @@ CreateLatestDoneFile <- function(file=fhi::DashboardFolder("data_clean",paste0("
 ########################################################################################################
 #' findLastWeek
 #'
-#' @param date
-#' @param data
-#'
-#' @return
-#' @export
-#'
-#' @examples
+#' @param date a
+#' @param data a
+#' @export findLastWeek
 findLastWeek <- function(date, data) {
 
   lastweek=as.numeric(format.Date(as.Date(date),"%V"))-1
@@ -219,12 +190,9 @@ findLastWeek <- function(date, data) {
 
 #' CleanData
 #'
-#' @param d
+#' @param d a
 #' @import data.table
-#' @return
-#' @export
-#'
-#' @examples
+#' @export CleanData
 CleanData <- function(d) {
   # variables used in data.table functions in this function
   date <- NULL
@@ -248,14 +216,11 @@ CleanData <- function(d) {
 
 #' CleanDataByFylke
 #'
-#' @param d
-#' @param FylkeData
-#' @param myfylke
+#' @param d a
+#' @param FylkeData a
+#' @param myfylke a
 #' @import data.table
-#' @return
-#' @export
-#'
-#' @examples
+#' @export CleanDataByFylke
 CleanDataByFylke <- function(d,FylkeData,myfylke) {
   # variables used in data.table functions in this function
   date <- NULL
@@ -290,13 +255,9 @@ CleanDataByFylke <- function(d,FylkeData,myfylke) {
 
 #' roundUpNice
 #'
-#' @param x
-#' @param nice
-#'
-#' @return
-#' @export
-#'
-#' @examples
+#' @param x a
+#' @param nice a
+#' @export roundUpNice
 roundUpNice <- function(x, nice=c(1,2,4,5,6,8,10)) {
   if(length(x) != 1) stop("'x' must be of length 1")
   10^floor(log10(x)) * nice[[which(x <= 10^floor(log10(x)) * nice)[[1]]]]
@@ -306,14 +267,10 @@ roundUpNice <- function(x, nice=c(1,2,4,5,6,8,10)) {
 ########################################################################################################
 #' selectAgeGroups
 #'
-#' @param d
-#' @param ageG
-#' @param S
-#'
-#' @return
+#' @param d a
+#' @param ageG a
+#' @param S a
 #' @export selectAgeGroups
-#'
-#' @examples
 selectAgeGroups <- function(d,ageG,S) {
   d <- d[newage==ageG,]
   d1<- tapply(getdataout(d,S), d[, c("year","week")], sum) ## get all gastro consultations

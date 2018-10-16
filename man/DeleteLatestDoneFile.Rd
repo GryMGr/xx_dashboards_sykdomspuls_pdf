@@ -7,6 +7,9 @@
 DeleteLatestDoneFile(file = fhi::DashboardFolder("data_clean", paste0("done_",
   LatestRawID(), ".txt")))
 }
+\arguments{
+\item{file}{a}
+}
 \description{
 DeleteLatestDoneFile
 }

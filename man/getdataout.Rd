@@ -6,6 +6,11 @@
 \usage{
 getdataout(d, S)
 }
+\arguments{
+\item{d}{a}
+
+\item{S}{a}
+}
 \description{
 getdataout
 }
