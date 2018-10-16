@@ -7,7 +7,11 @@
 selectAgeGroups(d, ageG, S)
 }
 \arguments{
-\item{S}{}
+\item{d}{a}
+
+\item{ageG}{a}
+
+\item{S}{a}
 }
 \description{
 selectAgeGroups

@@ -7,7 +7,9 @@
 getIN(In, S)
 }
 \arguments{
-\item{S}{}
+\item{In}{a}
+
+\item{S}{a}
 }
 \description{
 Title

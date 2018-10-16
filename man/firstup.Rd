@@ -6,6 +6,9 @@
 \usage{
 firstup(x)
 }
+\arguments{
+\item{x}{a}
+}
 \description{
 Title
 }

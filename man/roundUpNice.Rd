@@ -7,7 +7,9 @@
 roundUpNice(x, nice = c(1, 2, 4, 5, 6, 8, 10))
 }
 \arguments{
-\item{nice}{}
+\item{x}{a}
+
+\item{nice}{a}
 }
 \description{
 roundUpNice

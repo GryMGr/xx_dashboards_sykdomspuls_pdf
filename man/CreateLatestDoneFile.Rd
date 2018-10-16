@@ -8,7 +8,7 @@ CreateLatestDoneFile(file = fhi::DashboardFolder("data_clean", paste0("done_",
   LatestRawID(), ".txt")))
 }
 \arguments{
-\item{file}{}
+\item{file}{a}
 }
 \description{
 CreateLatestDoneFile

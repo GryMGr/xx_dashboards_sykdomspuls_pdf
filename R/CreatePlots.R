@@ -5,10 +5,8 @@ Ukenummer <- c(30:52,1:29)
 ###############################################################################
 #' Title
 #'
-#' @param x
-#' @return
-#' @export
-#' @examples
+#' @param x a
+#' @export firstup
 firstup <- function(x) {
   substr(x, 1, 1) <- toupper(substr(x, 1, 1))
   x
@@ -17,16 +15,13 @@ firstup <- function(x) {
 ###############################################################################
 #' CreatePlots1
 #'
-#' @param d
-#' @param weeknow
-#' @param Ukenummer
-#' @param title
-#' @param yrange
+#' @param d a
+#' @param weeknow a
+#' @param Ukenummer a
+#' @param title a
+#' @param yrange a
 #' @import data.table
-#' @return
-#' @export
-#'
-#' @examples
+#' @export CreatePlots1
 CreatePlots1 <- function (d, weeknow, Ukenummer, title,yrange) {
   par(mfrow=c(1,1),oma = c(0, 0,2, 0))
 
@@ -56,15 +51,12 @@ CreatePlots1 <- function (d, weeknow, Ukenummer, title,yrange) {
 ##############################################################################
 #' CreatePlots2
 #'
-#' @param d1
-#' @param weeknow
-#' @param Ukenummer
-#' @param Fylkename
+#' @param d1 a
+#' @param weeknow a
+#' @param Ukenummer a
+#' @param Fylkename a
 #' @import data.table
-#' @return
-#' @export
-#'
-#' @examples
+#' @export CreatePlots2
 CreatePlots2 <- function (d1, weeknow, Ukenummer, Fylkename,S) {
 
   ageGroups=c("0 - 4 år", "5 - 19 år", "20 - 64 år", "65+ år")

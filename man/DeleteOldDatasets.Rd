@@ -9,9 +9,13 @@ DeleteOldDatasets(raw = list.files(fhi::DashboardFolder("data_raw"),
   dat_in = list.files(fhi::DashboardFolder("data_raw"), "in_default"),
   clean = list.files(fhi::DashboardFolder("data_clean"), "done_"))
 }
-\description{
-DeleteOldDatasets
+\arguments{
+\item{raw}{a}
+
+\item{dat_in}{a}
+
+\item{clean}{a}
 }
-\examples{
+\description{
 DeleteOldDatasets
 }

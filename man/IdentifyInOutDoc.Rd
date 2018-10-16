@@ -19,6 +19,3 @@ IdentifyInOutDoc(raw = list.files(fhi::DashboardFolder("data_raw"),
 \description{
 IdentifyInOutDoc
 }
-\examples{
-IdentifyInOutDoc
-}

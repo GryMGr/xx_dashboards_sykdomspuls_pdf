@@ -6,6 +6,9 @@
 \usage{
 CleanData(d)
 }
+\arguments{
+\item{d}{a}
+}
 \description{
 CleanData
 }

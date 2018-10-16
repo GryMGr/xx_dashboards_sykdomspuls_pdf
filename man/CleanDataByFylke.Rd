@@ -6,6 +6,13 @@
 \usage{
 CleanDataByFylke(d, FylkeData, myfylke)
 }
+\arguments{
+\item{d}{a}
+
+\item{FylkeData}{a}
+
+\item{myfylke}{a}
+}
 \description{
 CleanDataByFylke
 }

@@ -8,6 +8,11 @@ IdentifyDatasets(raw = list.files(fhi::DashboardFolder("data_raw"),
   "^partially_formatted_"),
   clean = list.files(fhi::DashboardFolder("data_clean"), "done_"))
 }
+\arguments{
+\item{raw}{a}
+
+\item{clean}{a}
+}
 \description{
 IdentifyDatasets
 }
