@@ -14,6 +14,8 @@ CreatePlots2(d1, weeknow, Ukenummer, Fylkename, S)
 \item{Ukenummer}{a}
 
 \item{Fylkename}{a}
+
+\item{S}{a}
 }
 \description{
 CreatePlots2
