@@ -38,8 +38,8 @@ CreatePlots1 <- function (d, weeknow, Ukenummer, title,yrange) {
   q <-axis(1, at=1:52, labels=Ukenummer,las=2)
   abline(v = c(22, 25), col = "black", lty = 2)
   abline(v = c(34, 40), col = "black", lty = 2)
-  text(23.5,0, "Jul/Nyttår", col = "black", cex=1.4)
-  text(37,0, "Påske", col = "black", cex=1.4)
+  text(23.5,0, "Jul/Nyttar", col = "black", cex=1.4)
+  text(37,0, "Paske", col = "black", cex=1.4)
 
   q <-legend("topright", inset=.02,roundUpNice(yrange), legend=c("2012 / 2013", "2013 / 2014", "2014 / 2015", "2015 / 2016", "2016 / 2017", "2017 / 2018"),
              lty=1, col=c("green","red", "orange", "purple", "blue", "black"),
@@ -55,11 +55,12 @@ CreatePlots1 <- function (d, weeknow, Ukenummer, title,yrange) {
 #' @param weeknow a
 #' @param Ukenummer a
 #' @param Fylkename a
+#' @param S a
 #' @import data.table
 #' @export CreatePlots2
 CreatePlots2 <- function (d1, weeknow, Ukenummer, Fylkename,S) {
 
-  ageGroups=c("0 - 4 år", "5 - 19 år", "20 - 64 år", "65+ år")
+  ageGroups=c("0 - 4 ar", "5 - 19 ar", "20 - 64 ar", "65+ ar")
 
   par(mfrow=c(2,2),oma = c(0, 0, 2, 0))
   for (i in 1:4) {
