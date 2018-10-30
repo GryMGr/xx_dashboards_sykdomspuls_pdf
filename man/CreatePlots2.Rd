@@ -4,7 +4,7 @@
 \alias{CreatePlots2}
 \title{CreatePlots2}
 \usage{
-CreatePlots2(d1, weeknow, Ukenummer, Fylkename, S)
+CreatePlots2(d1, weeknow, Ukenummer, Fylkename, S, mytittle)
 }
 \arguments{
 \item{d1}{a}
@@ -16,6 +16,8 @@ CreatePlots2(d1, weeknow, Ukenummer, Fylkename, S)
 \item{Fylkename}{a}
 
 \item{S}{a}
+
+\item{mytittle}{a}
 }
 \description{
 CreatePlots2
