@@ -1,5 +1,6 @@
 #' hi
 #' @param output_dir a
+#' @param SYNDROM a
 #' @export sykdompulspdf_template_copy
 sykdompulspdf_template_copy <- function(output_dir, SYNDROM){
   dir <- system.file("extdata", package = "sykdomspulspdf")
@@ -13,6 +14,7 @@ sykdompulspdf_template_copy <- function(output_dir, SYNDROM){
 
 #' hi
 #' @param output_dir a
+#' @param SYNDROM a
 #' @export sykdompulspdf_template_remove
 sykdompulspdf_template_remove <- function(output_dir, SYNDROM){
   dir <- system.file("extdata", package = "sykdomspulspdf")

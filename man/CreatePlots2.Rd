@@ -6,6 +6,19 @@
 \usage{
 CreatePlots2(d1, weeknow, Ukenummer, Fylkename, S, mytittle)
 }
+\arguments{
+\item{d1}{a}
+
+\item{weeknow}{a}
+
+\item{Ukenummer}{a}
+
+\item{Fylkename}{a}
+
+\item{S}{a}
+
+\item{mytittle}{a}
+}
 \description{
 CreatePlots2
 }

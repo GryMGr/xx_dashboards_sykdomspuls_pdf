@@ -8,6 +8,8 @@ sykdompulspdf_template_remove(output_dir, SYNDROM)
 }
 \arguments{
 \item{output_dir}{a}
+
+\item{SYNDROM}{a}
 }
 \description{
 hi
