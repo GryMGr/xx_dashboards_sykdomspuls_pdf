@@ -13,7 +13,7 @@ COMPUTER=$(cat /tmp/computer)
   echo
   echo "****START****sykdomspuls_pdf****"
 
-  /usr/local/bin/Rscript /r/sykdomspuls_pdf/src/RunProcess.R
+  /usr/local/bin/Rscript /r/sykdomspulspdf/src/RunProcess.R
 
   echo "****END****sykdomspuls_pdf****"
   

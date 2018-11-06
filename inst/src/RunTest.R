@@ -19,7 +19,7 @@ a$out <- file(file.path("/junit","sykdomspuls_pdf.xml"), "w+")
 a$start_context("sykdomspuls_log")
 
 #if(FALSE){
-  output <- processx::run("Rscript","/r/sykdomspuls_pdf/src/RunProcess.R", error_on_status=F, echo=T)
+  output <- processx::run("Rscript","/r/sykdomspulspdf/src/RunProcess.R", error_on_status=F, echo=T)
   cat("\n\nstdout\n\n")
   cat(output$stdout)
   cat("\n\nstderr\n\n")
