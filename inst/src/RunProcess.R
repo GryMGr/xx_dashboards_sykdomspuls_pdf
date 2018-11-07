@@ -9,21 +9,26 @@ suppressMessages(library(ggplot2))
 #devtools::use_package("odfWeave")
 
 
-files <- IdentifyDatasets()
+files <- list.files(fhi::DashboardFolder("data_raw"),"^partially_formatted_")
 mydate <- format(Sys.time(), "%d.%m.%y")
 
 # fhi::DashboardIsDev()
 
-if(nrow(files)==0){
-  fhi::DashboardMsg("No new data")
+if(length(files)==0){
+  fhi::DashboardMsg("No data")
   quit(save="no", status=0)
 
 } else {
+  for(f in files) fhi::DashboardMsg(f)
+  # grab the latest
+  useFile <- max(files)
+
   if(file.exists(fhi::DashboardFolder("results","DONE.txt")) & !fhi::DashboardIsDev()){
+    fhi::DashboardMsg("results DONE.txt exists")
     quit(save="no", status=0)
   }
 
-  d <- fread(fhi::DashboardFolder("data_raw",files$raw))
+  d <- fread(fhi::DashboardFolder("data_raw",useFile))
   fylke <-fread(system.file("extdata", "fylke.csv", package = "sykdomspulspdf"))
   lastestUpdate <- as.Date(gsub("_","-",LatestRawID()))
 
