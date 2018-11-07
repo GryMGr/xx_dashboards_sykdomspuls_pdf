@@ -13,6 +13,11 @@ files <- list.files(fhi::DashboardFolder("data_raw"),"^partially_formatted_")
 mydate <- format(Sys.time(), "%d.%m.%y")
 
 # fhi::DashboardIsDev()
+fhi::DashboardMsg("/data_raw")
+list.files("/data_raw")
+
+fhi::DashboardMsg("/data_raw/sykdomspuls_pdf")
+list.files("/data_raw/sykdomspuls_pdf")
 
 if(length(files)==0){
   fhi::DashboardMsg("No data")
